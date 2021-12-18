@@ -17,7 +17,7 @@ python mAP.py
 <br>
 <p>precision_recall_curve</p><br>
 <img src="output/precision_recall_curve.png" width="80%" /><br>
- <p>confusion matrix</p><br>
+<p>confusion matrix</p><br>
 <img src="output/mAP.png" width="80%" />
 ### reference
 [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)<br>
