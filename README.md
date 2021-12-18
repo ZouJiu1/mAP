@@ -3,12 +3,13 @@
 
 `
 pytorch=1.8.1
-`
-
+`<br>
+the groundtruth dir contains truth labels, the predict dir contains predicted labels.<br>
 ### Preparation
 groundtruth dir: eachfile respond to a image with "label xmin ymin xmax ymax" <br>
 predict dir:eachfile respond to a image with "label xmin ymin xmax ymax score" <br>
-
+(xmin, ymin) is left-top coordinate, (xmax, ymax) is right-bottom coordinate<br>
+<img src="output/coordi.png" width="39%" /><br>
 ### Run
 `
 python mAP.py
