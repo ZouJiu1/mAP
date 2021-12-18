@@ -15,8 +15,10 @@ predict dir:eachfile respond to a image with "label xmin ymin xmax ymax score" <
 python mAP.py
 `
 <br>
-                    <p>precision_recall_curve</p>                                           <p>confusion matrix</p>
-<img src="output/precision_recall_curve.png" width="39%" /><img src="output/mAP.png" width="39%" />
+<p>precision_recall_curve</p><br>
+<img src="output/precision_recall_curve.png" width="80%" /><br>
+ <p>confusion matrix</p><br>
+<img src="output/mAP.png" width="80%" />
 ### reference
 [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)<br>
 [https://github.com/Cartucho/mAP](https://github.com/Cartucho/mAP)
