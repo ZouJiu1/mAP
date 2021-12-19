@@ -21,6 +21,9 @@ python mAP.py
 <p>confusion matrix</p><br>
 <img src="output/mAP.png" width="80%" /><br>
 
+### Process
+<img src="output/example.png" width="80%" /><br>
+
 ### Reference <br>
 [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)<br>
 [https://github.com/Cartucho/mAP](https://github.com/Cartucho/mAP)

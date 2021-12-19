@@ -1,0 +1,147 @@
+<mxfile host="65bd71144e">
+    <diagram id="5RPYAf9UDymssBbNiKYn" name="第 1 页">
+        <mxGraphModel dx="747" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="image A' truelabels" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="80" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="image A'&lt;br&gt;predictlabels" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="80" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="110" as="sourcePoint"/>
+                        <mxPoint x="170" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="class 1 class2 ... class n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="130" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="169.5" y="150" as="sourcePoint"/>
+                        <mxPoint x="210" y="180" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="220" y="180" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="class 1 class2 ... class n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="235" y="130" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="3" target="12">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="180" y="120" as="sourcePoint"/>
+                        <mxPoint x="180" y="140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="class m" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="160" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="class m" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="160" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=none;html=1;" edge="1" parent="1" source="19">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="image N'&lt;br&gt;predictlabels" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="80" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=none;html=1;" edge="1" parent="1" source="20">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="image N' truelabels" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="80" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;" edge="1" parent="1" source="21">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="......" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="375" y="90" width="105" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="22" target="23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;div style=&quot;color: rgb(51 , 51 , 51) ; background-color: rgb(245 , 245 , 245) ; font-family: &amp;#34;consolas&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 13px ; line-height: 18px&quot;&gt;&lt;span style=&quot;color: #636262 ; font-style: italic&quot;&gt;the maximum iou and index in true labels&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;shadow=1;glass=1;sketch=1;dashed=1;fillStyle=solid;fillColor=#9999FF;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="190" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="23">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="215" y="260" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="max iou&amp;gt;0.5" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;dashed=1;strokeColor=none;fillColor=#9999FF;glass=1;sketch=1;fillStyle=solid;" vertex="1" parent="1">
+                    <mxGeometry x="168.75" y="230" width="92.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="26">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="330" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="get the first predicted class label as TP, other same class is FP, &amp;gt;0.5:0.95's bool value" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;dashed=1;strokeColor=none;glass=1;sketch=1;fillStyle=solid;fillColor=#FF99FF;size=-10;arcSize=50;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="260" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" style="edgeStyle=none;html=1;" edge="1" parent="1" source="31">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="255.625" y="370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="collect [.5:.95'bool、pred conf、pred class、ture class]" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;dashed=1;strokeColor=none;glass=1;sketch=1;fillStyle=solid;fillColor=#FF99FF;size=-10;arcSize=50;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="330" width="311.25" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;glass=1;dashed=1;sketch=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="71.88" width="220" height="46.25" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;glass=1;dashed=1;sketch=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="73.75" width="190" height="42.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;html=1;" edge="1" parent="1" source="36">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="sort&amp;nbsp;descending by pred conf" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;dashed=1;strokeColor=none;fillColor=#9999FF;glass=1;sketch=1;fillStyle=solid;" vertex="1" parent="1">
+                    <mxGeometry x="154.38" y="370" width="202.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" style="edgeStyle=none;html=1;" edge="1" parent="1" source="38">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="38" value="class 1 class2 ... class n" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="410" width="140" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="class m" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="430" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="41">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="&lt;div style=&quot;color: rgb(51 , 51 , 51) ; background-color: rgb(245 , 245 , 245) ; font-family: &amp;#34;consolas&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 13px ; line-height: 18px&quot;&gt;&lt;span style=&quot;color: #636262 ; font-style: italic&quot;&gt;n_l: number of class m true labels&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(51 , 51 , 51) ; background-color: rgb(245 , 245 , 245) ; font-family: &amp;#34;consolas&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; font-size: 13px ; line-height: 18px&quot;&gt;&lt;span style=&quot;color: #636262 ; font-style: italic&quot;&gt;&amp;nbsp;n_p:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(99 , 98 , 98) ; font-style: italic&quot;&gt;number of class m predict labels&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(99 , 98 , 98) ; font-style: italic&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;shadow=1;dashed=1;strokeColor=none;glass=1;sketch=1;fillStyle=solid;fillColor=#FF99FF;size=-10;arcSize=50;" vertex="1" parent="1">
+                    <mxGeometry x="92.19" y="460" width="315.62" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="42" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="use bool value cumsum calculate R、P" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;rounded=1;shadow=1;dashed=1;strokeColor=none;fillColor=#FF99FF;glass=1;arcSize=50;sketch=1;fillStyle=solid;size=0.14285714285714285;" vertex="1" parent="1">
+                    <mxGeometry x="185" y="500" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="ap=P、R curve areas" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;dashed=1;strokeColor=none;glass=1;arcSize=50;sketch=1;fillStyle=solid;fillColor=#FF99FF;" vertex="1" parent="1">
+                    <mxGeometry x="195" y="540" width="120" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

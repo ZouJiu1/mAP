@@ -92,6 +92,8 @@ def calculate(truelabel, predictpath):
                 # Append detections
                 detected_set = set()
                 count = 0
+                #choose max iou>0.5' index
+                #挑出最大的iou值大于0.5的index，也就是预测框
                 for j in (ious > iouv[0]).nonzero(as_tuple=False):
                     d = ti[i[j]]  # detected target
                     if d.item() not in detected_set:
