@@ -18,8 +18,6 @@ python mAP.py
 `<br>
 <p>precision_recall_curve</p><br>
 <img src="output/precision_recall_curve.png" width="80%" /><br>
-<p>confusion matrix</p><br>
-<img src="output/mAP.png" width="80%" /><br>
 
 ### Process
 <img src="output/example.png" width="80%" /><br>
