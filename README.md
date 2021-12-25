@@ -35,9 +35,6 @@ calculation<br>
 results<br>
 <img src="output/class1AP.png" width="32%" />  <img src="output/class2AP.png" width="32%" />  <img src="output/class3AP.png" width="32%" /><br>
 
-
-
-
 ### Reference <br>
 [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)<br>
 [https://github.com/Cartucho/mAP](https://github.com/Cartucho/mAP)
