@@ -22,7 +22,7 @@ python mAP.py
 ### Process
 <img src="output/example.png" width="80%" /><br>
 
-### Calculating mAP examples
+### Calculating mAP example
 turelabels<br>
 <img src="output/turelabel.png" width="27%" /><br>
 
