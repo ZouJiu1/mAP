@@ -10,7 +10,7 @@ the groundtruth dir contains truth labels, the predict dir contains predicted la
 groundtruth dir: each file correspond to a special image with "label xmin ymin xmax ymax" <br>
 predict dir: each file correspond to a special image with "label xmin ymin xmax ymax score" <br>
 (xmin, ymin) is left-top coordinate, (xmax, ymax) is right-bottom coordinate<br>
-<img src="output/coordi.png" width="39%" /><br>
+<img src="output/coordi.jpg" width="39%" /><br>
 
 ### Run
 `
@@ -21,6 +21,22 @@ python mAP.py
 
 ### Process
 <img src="output/example.png" width="80%" /><br>
+
+### Calculating mAP examples
+turelabels<br>
+<img src="output/turelabel.png" width="27%" /><br>
+
+prediction<br>
+<img src="output/predict.png" width="27%" /><br>
+
+calculation<br>
+<img src="output/calculateAP.png" width="98%" /><br>
+
+results<br>
+<img src="output/class1AP.png" width="32%" />  <img src="output/class2AP.png" width="32%" />  <img src="output/class3AP.png" width="32%" /><br>
+
+
+
 
 ### Reference <br>
 [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)<br>
