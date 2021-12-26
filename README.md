@@ -39,6 +39,6 @@ results<br>
 [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)<br>
 [https://github.com/Cartucho/mAP](https://github.com/Cartucho/mAP)
 
-### blogs <br>
+### Mainpage <br>
 [https://blog.csdn.net/m0_50617544/article/details/121893818](https://blog.csdn.net/m0_50617544/article/details/121893818)<br>
 [https://zhuanlan.zhihu.com/p/449822471](https://zhuanlan.zhihu.com/p/449822471)
