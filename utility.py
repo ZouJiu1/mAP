@@ -330,6 +330,12 @@ def compute_ap(recall, precision):
     #>>> np.maximum.accumulate(x)
     #    array([0.1, 0.2, 0.2, 0.3, 0.3, 0.6, 0.6])
     mpre = np.flip(np.maximum.accumulate(np.flip(mpre)))
+    # "np.flip(np.maximum.accumulate(np.flip(mpre)))" means below
+    '''
+    #or you can use this code
+    for i in range(len(mpre)-2, -1, -1):
+        mpre[i] = max(mpre[i], mpre[i+1])
+    '''
 
     # Integrate area under curve
     method = 'interp'  # methods: 'continuous', 'interp'
@@ -341,6 +347,22 @@ def compute_ap(recall, precision):
     else:  # 'continuous'
         i = np.where(mrec[1:] != mrec[:-1])[0]  # points where x axis (recall) changes
         ap = np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])  # area under curve
+        '''
+        #or you can use this code to calculate
+        i_list = []
+        for i in range(1, len(mrec)):
+            if mrec[i] != mrec[i-1]:
+                i_list.append(i) # if it was matlab would be i + 1
+         """
+        The Average Precision (AP) is the area under the curve
+            (numerical integration)
+            matlab: ap=sum((mrec(i)-mrec(i-1)).*mpre(i));
+        """
+        ap = 0.0
+        for i in i_list:
+            ap += ((mrec[i]-mrec[i-1])*mpre[i])
+        return ap, mrec, mpre
+        '''
 
     return ap, mpre, mrec
 
