@@ -189,23 +189,24 @@ class ConfusionMatrix:
         return self.matrix
 
     def plot(self, save_dir='', names=()):
-        try:
-            import seaborn as sn
+        # try:
+        import seaborn as sn
+        import os
 
-            array = self.matrix / (self.matrix.sum(0).reshape(1, self.nc + 1) + 1E-6)  # normalize
-            array[array < 0.005] = np.nan  # don't annotate (would appear as 0.00)
+        array = self.matrix / (self.matrix.sum(0).reshape(1, self.nc + 1) + 1E-6)  # normalize
+        array[array < 0.005] = np.nan  # don't annotate (would appear as 0.00)
 
-            fig = plt.figure(figsize=(12, 9), tight_layout=True)
-            sn.set(font_scale=1.0 if self.nc < 50 else 0.8)  # for label size
-            labels = (0 < len(names) < 99) and len(names) == self.nc  # apply names to ticklabels
-            sn.heatmap(array, annot=self.nc < 30, annot_kws={"size": 8}, cmap='Blues', fmt='.2f', square=True,
-                       xticklabels=names + ['background FN'] if labels else "auto",
-                       yticklabels=names + ['background FP'] if labels else "auto").set_facecolor((1, 1, 1))
-            fig.axes[0].set_xlabel('True')
-            fig.axes[0].set_ylabel('Predicted')
-            fig.savefig(os.path.join(save_dir, 'confusion_matrix.png'), dpi=250)
-        except Exception as e:
-            pass
+        fig = plt.figure(figsize=(12, 9), tight_layout=True)
+        sn.set(font_scale=1.0 if self.nc < 50 else 0.8)  # for label size
+        labels = (0 < len(names) < 99) and len(names) == self.nc  # apply names to ticklabels
+        sn.heatmap(array, annot=self.nc < 30, annot_kws={"size": 8}, cmap='Blues', fmt='.2f', square=True,
+                    xticklabels=names + ['background FN'] if labels else "auto",
+                    yticklabels=names + ['background FP'] if labels else "auto").set_facecolor((1, 1, 1))
+        fig.axes[0].set_xlabel('True')
+        fig.axes[0].set_ylabel('Predicted')
+        fig.savefig(os.path.join(save_dir, 'confusion_matrix.png'), dpi=250)
+        # except Exception as e:
+        #     pass
 
     def print(self):
         for i in range(self.nc + 1):
@@ -233,11 +234,11 @@ def plot_pr_curve(px, py, ap, save_dir='.', names=()):
     fig.savefig(Path(save_dir) / 'precision_recall_curve.png', dpi=250)
 
 
-def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='precision-recall_curve.png', names=[]):
+def ap_per_class(tpmask, conf, pred_cls, target_cls, plot=False, save_dir='precision-recall_curve.png', names=[]):
     """ Compute the average precision, given the recall and precision curves.
     Source: https://github.com/rafaelpadilla/Object-Detection-Metrics.
     # Arguments
-        tp:  True positives (nparray, nx1 or nx10).
+        tpmask:  True positives mask (nparray, nx1 or nx10). bool type: True or False
         conf:  Objectness value from 0-1 (nparray).
         pred_cls:  Predicted object classes (nparray).
         target_cls:  True object classes (nparray).
@@ -251,7 +252,7 @@ def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='precision
     i = np.argsort(-conf)  #从大到小排列
     #get descending sorted_values
     #得到排序以后的值
-    tp, conf, pred_cls = tp[i], conf[i], pred_cls[i]
+    tpmask, conf, pred_cls = tpmask[i], conf[i], pred_cls[i]
 
     # Find unique classes
     unique_classes = np.unique(target_cls)
@@ -259,16 +260,17 @@ def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='precision
     # Create Precision-Recall curve and compute AP for each class
     px, py = np.linspace(0, 1, 1000), []  # for plotting
     pr_score = 0.1  # score to evaluate P and R https://github.com/ultralytics/yolov3/issues/898
-    #[len(classes), 10]    tp.shape[1] = 10, tp: bool type
+    #[len(classes), 10]    tpmask.shape[1] = 10, tp: bool type
     #tp是bool类型
-    s = [unique_classes.shape[0], tp.shape[1]]  # number class, number iou thresholds (i.e. 10 for mAP0.5...0.95)
+    s = [unique_classes.shape[0], tpmask.shape[1]]  # number class, number iou thresholds (i.e. 10 for mAP0.5...0.95)
     ap, p, r = np.zeros(s), np.zeros(s), np.zeros(s)
+    #对每个类单独计算ap值
     for ci, c in enumerate(unique_classes):
         #get predicted index of special class
         i = pred_cls == c
-        # 真实标签的数量
+        # 这个类所属-真实标签的数量
         n_l = (target_cls == c).sum()  # number of labels
-        # 预测标签的数量
+        # 这个类所属-预测标签的数量
         n_p = i.sum()  # number of predictions
 
         if n_p == 0 or n_l == 0:
@@ -277,10 +279,10 @@ def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='precision
             # Accumulate FPs and TPs，if bool=False，then less than iou_thres
             # tp：bool type [*, 10]，10 columns，cumsum get sum by column，fpc: 10 columns，fpc is false positive cumsum number
             # tp是bool类型的，10列，cumsum累加，按列求和共10列，fpc是false positive的个数累加和
-            fpc = (1 - tp[i]).cumsum(0)
+            fpc = (1 - tpmask[i]).cumsum(0)
             # tpc是true positive的个数累加和
             # tpc true positive cumsum number
-            tpc = tp[i].cumsum(0)
+            tpc = tpmask[i].cumsum(0)
 
             # Recall=TP/(the number of ture labels)
             recall = tpc / (n_l + 1e-16)  # recall curve
@@ -297,7 +299,7 @@ def ap_per_class(tp, conf, pred_cls, target_cls, plot=False, save_dir='precision
 
             # AP from recall-precision curve for each iou_thres 0.5:0.95
             #tp.shape[1]=10               0.5,0.55 ......0.95
-            for j in range(tp.shape[1]):
+            for j in range(tpmask.shape[1]):
                 # 计算相应的AP值
                 ap[ci, j], mpre, mrec = compute_ap(recall[:, j], precision[:, j])
                 if plot and (j == 0):
@@ -392,3 +394,20 @@ def box_iou(box1, box2):
     #N个预测矩形框，M个真实框，计算交叠的区域面积，每个预测的矩形框计算M次真实的矩形框，共(N, M)个值
     inter = (torch.min(box1[:, None, 2:], box2[:, 2:]) - torch.max(box1[:, None, :2], box2[:, :2])).clamp(0).prod(2)
     return inter / (area1[:, None] + area2 - inter)  # iou = inter / (area1 + area2 - inter)
+
+def iou_calculate(truelabel, predict):
+    truearea = (truelabel[:, 2] - truelabel[:, 0]) * (truelabel[:, 3] - truelabel[:, 1])
+    predarea = (predict[:, 2] - predict[:, 0]) * (predict[:, 3] - predict[:, 1])
+
+    result = torch.zeros((len(predict),  len(truelabel)))
+    for i in range(len(predict)):
+        for j in range(len(truelabel)):
+            X_joinMIN = max(predict[i][0], truelabel[j][0])
+            Y_joinMIN = max(predict[i][1], truelabel[j][1])
+            X_joinMAX = min(predict[i][2], truelabel[j][2])
+            Y_joinMAX = min(predict[i][3], truelabel[j][3])
+            joinW = max(0, X_joinMAX - X_joinMIN)
+            joinH = max(0, Y_joinMAX - Y_joinMIN)
+            joinAREA = joinW * joinH
+            result[i, j] = joinAREA / (predarea[i] + truearea[j] - joinAREA + 1e-6)
+    return result

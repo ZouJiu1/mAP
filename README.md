@@ -1,4 +1,7 @@
 ## mAP
+### update-2023
+I rewrite some codes, It can be more better to understand, so should use `mAP_myself.py` this file to calculate or understand<br>
+There is a new parameter `min_confidence` to ignore those prediction below confidence threshold.<br>
 ### Calculate mAP of detection result and groundtruth
 
 `
